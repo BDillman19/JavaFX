@@ -1,10 +1,7 @@
 package com.bryce.db;
 
 import java.sql.SQLException;
-
 import org.junit.Before;
-
-import com.bryce.db.DbOperations;
 
 public class TestDbOperations {
 	DbOperations ops;
@@ -16,38 +13,38 @@ public class TestDbOperations {
 	
 //	@Test
 //	public void testCreate() throws SQLException {
-//		String username = "changed";
-//		String password = "notapassword";
-//		String create = ops.create(username, password);
-//		System.out.println(create);
+//		String username = "blahblah";
+//		String password = "blah";
+//		Optional<User> create = ops.create(username, password);
+//		System.out.println(create.isPresent());
 //	}
 //	
 //	@Test
 //	public void testReadAll() throws SQLException {
-//		List<String> create = ops.readAll();
+//		List<User> create = ops.readAll();
 //		create.stream()
-//		.peek(user -> System.out.println(user))
+//		.peek(user -> System.out.println(user.toString()))
 //		.collect(Collectors.toList());
 //	}
 //	
 //	@Test
 //	public void testRead() throws SQLException {
-//		String read = ops.read("blah");
+//		Optional<User> read = ops.read("blahblah");
 //		
-//		System.out.println(read);
+//		System.out.println(read.isPresent());
 //	}
-//
+
 //	@Test
 //	public void testDelete() throws SQLException {
-//		String delete = ops.delete("blah");
+//		String delete = ops.delete("blahblah");
 //		
 //		System.out.println(delete);
 //	}
 	
 //	@Test
 //	public void testUpdate() throws SQLException {
-//		String update = ops.update("notBlah", "blah", "blahspassword");
+//		Optional<User> update = ops.update("changed", "blah", "blahspassword");
 //		
-//		System.out.println(update);
+//		System.out.println(update.isPresent());
 //	}
 }

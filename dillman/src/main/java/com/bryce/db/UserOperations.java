@@ -8,7 +8,7 @@ import java.util.Optional;
 import com.bryce.classes.User;
 
 public class UserOperations {
-	DbOperations db;
+	private DbOperations db;
 	
 	public UserOperations() {
 		try {

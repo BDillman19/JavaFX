@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+import com.bryce.classes.Expense;
+import com.bryce.classes.Income;
 import com.bryce.classes.User;
 
 public class DbOperations {
@@ -27,12 +29,15 @@ public class DbOperations {
 		
 	}
 	
-	protected Optional<User> create(final String un, final String password) throws SQLException {
-		Objects.requireNonNull(un);
+	protected Optional<User> create(final String username,
+			final String password, 
+			final List<Income> incomeList,
+			final List<Expense> expenseList) throws SQLException {
+		Objects.requireNonNull(username);
 		Objects.requireNonNull(password);
 		
-		statement.execute(String.format("INSERT INTO User (username, password) VALUES('%s','%s')", un, password));
-		resultSet = statement.executeQuery(String.format("SELECT * FROM User WHERE username='%s'" , un));
+		statement.execute(String.format("INSERT INTO User (username, password, incomeList, expenseList) VALUES('%s','%s')", username, password));
+		resultSet = statement.executeQuery(String.format("SELECT * FROM User WHERE username='%s'" , username));
 		if (resultSet.next()) {
 			return Optional.of(new User(resultSet.getString("username"), resultSet.getString("password")));
 		}
